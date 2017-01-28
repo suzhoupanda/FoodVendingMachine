@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A725856505C4893BCEC95B09A51832CCCFB8D29F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A725856505C4893BCEC95B09A51832CCCFB8D29F" : 9223372036854775807,
+    "9E65DC655C0CE3D1B4BA1D38FA3D0D39788D5DDC" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "619FB2F9-8275-4974-985D-444F21D4A273",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A725856505C4893BCEC95B09A51832CCCFB8D29F" : "FoodVendingMachineApp\/",
+    "9E65DC655C0CE3D1B4BA1D38FA3D0D39788D5DDC" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "VendingMachine",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "VendingMachine.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/alemak1\/InteractiveStoryApp.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9E65DC655C0CE3D1B4BA1D38FA3D0D39788D5DDC"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/suzhoupanda\/FoodVendingMachine.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A725856505C4893BCEC95B09A51832CCCFB8D29F"
+    }
+  ]
+}
