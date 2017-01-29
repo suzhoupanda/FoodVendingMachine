@@ -29,6 +29,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             
             let inventory = try InventoryUnarchiver.vendingInventory(fromDictionary: dictionary)
             self.vendingMachine = FoodVendingMachine(inventory: inventory)
+            
         } catch let error {
             fatalError("\(error)")
         }
@@ -76,6 +77,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 updateDisplay()
             } catch {
                 // FIXME: Error handling code
+            }
+            
+            if let indexPath = collectionView.indexPathsForSelectedItems?.first{
+                collectionView.deselectItem(at: indexPath, animated: true)
+                updateCell(having: indexPath, selected: false)
             }
             
         } else {
