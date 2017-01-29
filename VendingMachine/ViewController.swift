@@ -76,6 +76,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             do{
                 try vendingMachine.vend(selection: currentSelection, quantity: Int(stepper.value))
                 updateDisplayWith(balance: vendingMachine.amountDeposited, totalPrice: 0.0, itemPrice: 0, itemQuantity: 1)
+            } catch VendingMachineError.outOfStock {
+                showAlert()
             } catch {
                 // FIXME: Error handling code
             }
@@ -127,6 +129,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     
+    func showAlert(){
+        let alertController = UIAlertController(title: "Out of Stock", message: "This item is unavailable. Please make another selection", preferredStyle: .alert)
+        
+        present(alertController, animated: true, completion: nil)
+    }
     
     
     // MARK: UICollectionViewDataSource
