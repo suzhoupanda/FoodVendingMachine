@@ -21,6 +21,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 
     let vendingMachine: VendingMachine
     var currentSelection: VendingSelection?
+    var quantity = 1
     
     required init?(coder aDecoder: NSCoder) {
         do{
@@ -61,6 +62,21 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         layout.minimumInteritemSpacing = 10
         
         collectionView.collectionViewLayout = layout
+    }
+    
+    //Mark: - Vending Machine
+    
+    @IBAction func purchase() {
+        if let currentSelection = currentSelection{
+            do{
+                try vendingMachine.vend(selection: currentSelection, quantity: self.quantity)
+            } catch {
+                // FIXME: Error handling code
+            }
+            
+        } else {
+            // FIXME: alert user to no selection
+        }
     }
     
     // MARK: UICollectionViewDataSource
