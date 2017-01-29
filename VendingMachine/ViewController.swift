@@ -103,7 +103,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         if let currentSelection = currentSelection,let item = vendingMachine.item(forSelection: currentSelection){
 
             priceLabel.text = "$\(item.price)"
-            totalLabel.text = "$\(item.price*Double(item.quantity))"
+            totalLabel.text = "$\(item.price*Double(quantity))"
         }
     }
     
