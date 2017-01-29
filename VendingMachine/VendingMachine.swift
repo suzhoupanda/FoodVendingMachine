@@ -55,6 +55,12 @@ struct Item: VendingItem{
     var quantity: Int
 }
 
+enum VendingMachineError: Error{
+    case invalidSelection
+    case outOfStock
+    case insufficentFunds(required: Double)
+}
+
 class FoodVendingMachine: VendingMachine{
     
     let selection: [VendingSelection] = [
