@@ -25,7 +25,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     let vendingMachine: VendingMachine
     var currentSelection: VendingSelection?
-    var quantity = 1
     
     required init?(coder aDecoder: NSCoder) {
         do{
@@ -78,7 +77,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBAction func purchase() {
         if let currentSelection = currentSelection{
             do{
-                try vendingMachine.vend(selection: currentSelection, quantity: self.quantity)
+                try vendingMachine.vend(selection: currentSelection, quantity: Int(stepper.value))
                 updateDisplay()
             } catch {
                 // FIXME: Error handling code
@@ -101,12 +100,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func updateTotalPrice(for item: VendingItem){
-        totalLabel.text = "$\(item.price*Double(quantity))"
+        totalLabel.text = "$\(item.price*Double(stepper.value))"
     }
     
     @IBAction func updateQuantity(_ sender: UIStepper) {
-        self.quantity = Int(sender.value)
-        quantityLabel.text = "\(quantity)"
+        quantityLabel.text = "\(stepper.value)"
         
         if let currentSelection = currentSelection, let item = vendingMachine.item(forSelection: currentSelection){
             updateTotalPrice(for: item)
@@ -138,7 +136,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         stepper.value = 1
         quantityLabel.text = "1"
-        quantity = 1
         totalLabel.text = "$00.00"
         
         currentSelection = vendingMachine.selection[indexPath.row]
@@ -146,7 +143,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         if let currentSelection = currentSelection,let item = vendingMachine.item(forSelection: currentSelection){
 
             priceLabel.text = "$\(item.price)"
-            totalLabel.text = "$\(item.price*Double(quantity))"
+            totalLabel.text = "$\(item.price*Double(stepper.value))"
         }
     }
     
