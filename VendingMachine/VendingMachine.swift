@@ -23,6 +23,14 @@ enum VendingSelection: String{
     case sportsDrink
     case gum
     
+    func icon() -> UIImage{
+        if let image = UIImage(named: self.rawValue){
+            return image
+        } else{
+            return #imageLiteral(resourceName: "default")
+        }
+    }
+    
 }
 
 protocol VendingItem{
